@@ -1,13 +1,22 @@
 <?php
-
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
-class Designation extends Model
+/**
+ * Class Designation
+ * @package App\Models
+ */
+class Designation extends \Eloquent
 {
-    use HasFactory;
+
+    protected $fillable = [];
+    protected $table = 'designation';
     protected $guarded = ['id'];
 
+    /**
+     * @return mixed
+     */
+    protected function department()
+    {
+        return $this->belongsTo(Department::class, 'deptID', 'id');
+    }
 }

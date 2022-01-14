@@ -1,26 +1,20 @@
 <?php
-
 namespace App\Models;
 
 /**
- * Class Award
+ * Class Bank_detail
  * @package App\Models
  */
-class Award extends \Eloquent
+class Bank_detail extends \Eloquent
 {
-
-    // Don't forget to fill this array
-    protected $guarded = ['id'];
-
-    protected $fillable = ['employeeID', 'awardName', 'gift','cashPrice','forMonth','forYear'];
+    protected $fillable = ['employeeID','accountName','accountNumber','bank','pan','ifsc','branch'];
+    protected $guarded = [''];
 
     /**
      * @return mixed
      */
     public function employeeDetails()
     {
-
         return $this->belongsTo(Employee::class, 'employeeID', 'employeeID');
     }
-
 }

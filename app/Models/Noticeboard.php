@@ -1,11 +1,13 @@
 <?php
-
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
-class Noticeboard extends Model
+/**
+ * Class Noticeboard
+ * @package App\Models
+ */
+class Noticeboard extends \Eloquent
 {
-    use HasFactory;
+
+    // Don't forget to fill this array
+    protected $fillable = ['title', 'description', 'status'];
 }

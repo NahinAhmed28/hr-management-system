@@ -1,25 +1,22 @@
 <?php
-
 namespace App\Models;
 
 /**
- * Class Award
+ * Class Employee_document
  * @package App\Models
  */
-class Award extends \Eloquent
+class Employee_document extends \Eloquent
 {
-
-    // Don't forget to fill this array
+    protected $fillable = [];
     protected $guarded = ['id'];
 
-    protected $fillable = ['employeeID', 'awardName', 'gift','cashPrice','forMonth','forYear'];
+    protected $appends = ['document_url'];
 
     /**
      * @return mixed
      */
     public function employeeDetails()
     {
-
         return $this->belongsTo(Employee::class, 'employeeID', 'employeeID');
     }
 

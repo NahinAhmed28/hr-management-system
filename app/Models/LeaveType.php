@@ -1,11 +1,14 @@
 <?php
-
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
-class LeaveType extends Model
+/**
+ * Class Leavetype
+ * @package App\Models
+ */
+class Leavetype extends \Eloquent
 {
-    use HasFactory;
+
+    // Don't forget to fill this array
+    protected $fillable = ['leaveType', 'num_of_leave'];
+
 }
