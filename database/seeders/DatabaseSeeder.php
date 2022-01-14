@@ -24,8 +24,7 @@ class DatabaseSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         \Eloquent::unguard();
 
-        $this->call('SettingTableSeeder');
-        $this->command->info('Setting table seeded!');
+
 
         $this->call('AdminTableSeeder');
         $this->command->info('User table seeded!');
@@ -44,6 +43,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call('LeaveTypeSeeder');
         $this->command->info('LeaveType table seeded!');
+
+        $this->call('SettingTableSeeder');
+        $this->command->info('Setting table seeded!');
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
