@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\Award;
-use App\Models\Leavetype;
+use App\Models\LeaveType;
 use App\Models\Noticeboard;
 use App\Models\Setting;
 use App\Models\Admin;

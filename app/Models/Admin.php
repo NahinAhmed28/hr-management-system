@@ -3,7 +3,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Auth\Authenticatable as AuthenticableTrait;
-
+use App\Models;
 /**
  * Class Admin
  * @package App\Models
@@ -26,5 +26,6 @@ class Admin extends \Eloquent implements Authenticatable
      */
     protected $hidden = ['password', 'remember_token'];
     protected $fillable = ['name', 'email', 'password'];
+    protected $guarded = ['id'];
 
 }
