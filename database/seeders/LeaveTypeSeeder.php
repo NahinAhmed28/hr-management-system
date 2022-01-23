@@ -1,7 +1,11 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use App\Models\Leavetype;
+use Faker;
+
 class LeaveTypeSeeder extends Seeder
 {
     /**

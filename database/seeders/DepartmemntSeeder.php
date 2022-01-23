@@ -1,9 +1,12 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use App\Models\Department;
 use App\Models\Designation;
-class DepartmentTableSeeder extends Seeder
+
+class DepartmemntSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -23,6 +26,7 @@ class DepartmentTableSeeder extends Seeder
             'deptName'    =>  'PHP',
 
         ]);
+
         Designation::create([
             'deptID'    =>  $dept->id,
             'designation'   =>'Fresher PHP Developer'

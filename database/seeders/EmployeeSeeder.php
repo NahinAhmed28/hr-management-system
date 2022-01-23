@@ -1,8 +1,12 @@
 <?php
 
-use Illuminate\Database\Seeder;
+namespace Database\Seeders;
 
-class EmployeesTableSeeder extends Seeder
+use Illuminate\Database\Seeder;
+use Faker;
+use Illuminate\Support\Facades\DB;
+
+class EmployeeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,8 +15,9 @@ class EmployeesTableSeeder extends Seeder
      */
     public function run()
     {
-        \Illuminate\Support\Facades\DB::table('employees')->truncate(); // deleting old records.
-        DB::table('awards')->truncate(); // deleting old records.
+        \Illuminate\Support\Facades\DB::table('employees'); // deleting old records.
+        DB::table('awards'); // deleting old records.
+
         $faker = Faker\Factory::create();
 
         \App\Models\Employee::create([

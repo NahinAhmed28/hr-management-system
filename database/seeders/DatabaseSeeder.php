@@ -26,25 +26,25 @@ class DatabaseSeeder extends Seeder
 
 
 
-        $this->call('AdminTableSeeder');
-        $this->command->info('User table seeded!');
+        $this->call(\Database\Seeders\AdminSeeder::class);
+        $this->command->info('Admin table seeded!');
 
-        if(env('APP_ENV') == 'development' || env('APP_ENV') == 'demo'){
-            $this->call('DepartmentTableSeeder');
+        if(env('APP_ENV') == 'local' || env('APP_ENV') == 'demo'){
+            $this->call(\Database\Seeders\DepartmemntSeeder::class);
             $this->command->info('Department table seeded!');
-            $this->command->info('Designation also table seeded!');
+            $this->command->info('Designation  table also seeded!');
 
-            $this->call('EmployeesTableSeeder');
+            $this->call(\Database\Seeders\EmployeeSeeder::class);
             $this->command->info('Employees table seeded!');
 
-            $this->call('NoticeBoardSeeder');
+            $this->call(\Database\Seeders\NoticeBoardSeeder::class);
             $this->command->info('Notice Board seeded');
         }
 
-        $this->call('LeaveTypeSeeder');
+        $this->call(\Database\Seeders\LeaveTypeSeeder::class);
         $this->command->info('LeaveType table seeded!');
 
-        $this->call('SettingTableSeeder');
+        $this->call(\Database\Seeders\SettingSeeder::class);
         $this->command->info('Setting table seeded!');
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
