@@ -18,7 +18,7 @@
             <!--begin::Menu Nav-->
             <ul class="menu-nav">
                 <li class="menu-item {{ Request::is('admin/dashboard') ? 'menu-item-active' : '' }}" aria-haspopup="true">
-                    <a href="{{route('admin.dashboard')}}" class="menu-link">
+                    <a href="{{route('dashboard')}}" class="menu-link">
                         <i class="menu-icon flaticon2-architecture-and-city"></i>
                         <span style="font-size: 15px;font-weight: bold" class="menu-text news">Dashboard</span>
                     </a>

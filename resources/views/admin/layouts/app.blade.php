@@ -7,9 +7,6 @@
 
 <script src="https://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 
-@php
-    $user = Auth::user();
-@endphp
 <!--begin::Body-->
 <body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed page-loading">
 <!--begin::Main-->
