@@ -9,24 +9,13 @@ use App\Http\Controllers\Auth\AdminAuthController;
 use Illuminate\Support\Facades\Route;
 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
-    return view('auth.login');
+    return redirect()->route('adminDashboard');
 });
 
-Auth::routes(['register' => false]);
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Auth::routes(['register' => false]);
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 //Route::prefix('admin')->name('admin.')->middleware(['web', 'auth'])->group(function () {
@@ -39,11 +28,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //
 //});
 
-Route::get('admin/login',[AdminAuthController::class,'getLogin'] )->name('adminLogin');
-Route::post('admin/login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
-Route::get('admin/logout', [AdminAuthController::class, 'logout'])->name('adminLogout');
+//Route::get('admin/login',[AdminAuthController::class,'getLogin'] )->name('adminLogin');
+//Route::post('admin/login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
+//Route::get('admin/logout', [AdminAuthController::class, 'logout'])->name('adminLogout');
 
 Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function () {
     // Admin Dashboard
-    Route::get('dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
+    Route::get('dashboard',[DashboardController::class,'dashboard'])->name('adminDashboard');
 });

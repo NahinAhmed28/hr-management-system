@@ -3,4 +3,7 @@
 class Session
 {
 
+    public static function flush()
+    {
+    }
 }

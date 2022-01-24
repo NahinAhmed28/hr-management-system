@@ -42,12 +42,13 @@ class AdminAuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        $this->middleware('admin', ['except' => 'logout']);
     }
 
     public function getLogin()
     {
-        return view('auth.admin.login');
+//        dd('test');
+        return view('auth.login');
     }
 
     /**
