@@ -28,11 +28,11 @@ Route::get('/', function () {
 //
 //});
 
-//Route::get('admin/login',[AdminAuthController::class,'getLogin'] )->name('adminLogin');
-//Route::post('admin/login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
-//Route::get('admin/logout', [AdminAuthController::class, 'logout'])->name('adminLogout');
+//Route::get('/login',[AdminAuthController::class,'getLogin'] )->name('adminLogin');
+//Route::post('/login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
+//Route::get('/logout', [AdminAuthController::class, 'logout'])->name('adminLogout');
 
-Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function () {
-    // Admin Dashboard
-    Route::get('dashboard',[DashboardController::class,'dashboard'])->name('adminDashboard');
-});
+//Route::group(['prefix' => 'admin','middleware' => 'adminauth'], function () {
+//    // Admin Dashboard
+//    Route::get('dashboard',[DashboardController::class,'dashboard'])->name('adminDashboard');
+//});

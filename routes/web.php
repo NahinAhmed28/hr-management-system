@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
-//Route::get('/', function () {
-//    return redirect()->route('adminLogin');
-//});
+Route::get('/', function () {
+    return redirect()->route('adminLogin');
+});
 
 Auth::routes(['register' => false]);
 

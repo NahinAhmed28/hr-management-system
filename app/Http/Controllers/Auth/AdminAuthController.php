@@ -28,18 +28,10 @@ class AdminAuthController extends Controller
 
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
+
     protected $redirectTo = '/admin/login';
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+
     public function __construct()
     {
         $this->middleware('admin', ['except' => 'logout']);
@@ -51,23 +43,27 @@ class AdminAuthController extends Controller
         return view('auth.login');
     }
 
-    /**
-     * Show the application loginprocess.
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
+
     public function postLogin(Request $request)
     {
-        $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
+
+
+//        dd('test');
+
+//        $this->validate($request, [
+//            'email' => 'required|email',
+//            'password' => 'required',
+//        ]);
+
+
         if (auth()->guard('admin')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')]))
         {
+//            dd('test');
+
             $user = auth()->guard('admin')->user();
 
             \Session::put('success','You are Login successfully!!');
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('dashboard');
 
         } else {
             return back()->with('error','your username and password are wrong.');
@@ -85,6 +81,6 @@ class AdminAuthController extends Controller
         auth()->guard('admin')->logout();
         \Session::flush();
         \Sessioin::put('success','You are logout successfully');
-        return redirect(route('login'));
+        return redirect(route('adminLogin'));
     }
 }
