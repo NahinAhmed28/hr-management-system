@@ -3,7 +3,7 @@
     <!--begin::Brand-->
     <div class="brand flex-column-auto" id="kt_brand">
         <!--begin::Logo-->
-        <a href="{{route('admin.dashboard')}}" class="brand-logo">
+        <a href="{{route('dashboard')}}" class="brand-logo">
             <img alt="Logo" width="90px"
                  src="{{ asset('assets/global/image/logo.png') }}"/>
         </a>
@@ -25,24 +25,24 @@
                 </li>
 
                 <li class="menu-item {{ (Request::is('admin/users') or Request::is('admin/users/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-                    <a href="{{route('admin.users.index')}}" class="menu-link">
-                        <i class="menu-icon flaticon2-user"></i>
-                        <span style="font-size: 15px;" class="menu-text">Users</span>
-                    </a>
+{{--                    <a href="{{route('admin.users.index')}}" class="menu-link">--}}
+{{--                        <i class="menu-icon flaticon2-user"></i>--}}
+{{--                        <span style="font-size: 15px;" class="menu-text">Users</span>--}}
+{{--                    </a>--}}
                 </li>
 
                 <li class="menu-item {{ (Request::is('admin/departments') or Request::is('admin/departments/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-                    <a href="{{route('admin.departments.index')}}" class="menu-link">
-                        <i class="menu-icon flaticon2-shield"></i>
-                        <span style="font-size: 15px;" class="menu-text">Departments</span>
-                    </a>
+{{--                    <a href="{{route('admin.departments.index')}}" class="menu-link">--}}
+{{--                        <i class="menu-icon flaticon2-shield"></i>--}}
+{{--                        <span style="font-size: 15px;" class="menu-text">Departments</span>--}}
+{{--                    </a>--}}
                 </li>
 
                 <li class="menu-item {{ (Request::is('admin/expenses') or Request::is('admin/expenses/*')) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-                    <a href="{{route('admin.expenses.index')}}" class="menu-link">
-                        <i class="menu-icon flaticon2-sheet"></i>
-                        <span style="font-size: 15px;" class="menu-text">Expenses</span>
-                    </a>
+{{--                    <a href="{{route('admin.expenses.index')}}" class="menu-link">--}}
+{{--                        <i class="menu-icon flaticon2-sheet"></i>--}}
+{{--                        <span style="font-size: 15px;" class="menu-text">Expenses</span>--}}
+{{--                    </a>--}}
                 </li>
 
 
