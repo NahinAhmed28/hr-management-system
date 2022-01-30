@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Facades\App;
 use phpDocumentor\Reflection\Types\Boolean;
 
 class BaseService
@@ -19,6 +20,11 @@ class BaseService
     public function getData()
     {
         return $this->model->get();
+    }
+
+    public function getActiveData()
+    {
+        return $this->model->where('status', 1)->get();
     }
 
     /**
@@ -77,6 +83,32 @@ class BaseService
     public function listByStatus()
     {
         return $this->model->where('status', 1)->orderBy('name', 'asc')->get(['name', 'id']);
+    }
+
+
+
+    public function listByContentWithStatus()
+    {
+        return $this->model->where('status', 1)->orderBy('id','desc')->get(['en_name','bn_name','id']);
+    }
+
+
+    public function listByLocalization(){
+        if (App::getLocale() == 'en'){
+            return $this->model->where('status', 1)->orderBy('en_name', 'asc')->get(['en_name', 'id']);
+        }elseif (App::getLocale() == 'bn'){
+            return $this->model->where('status', 1)->orderBy('bn_name', 'asc')->get(['bn_name', 'id']);
+        }else{
+            return $this->model->where('status', 1)->orderBy('en_name', 'asc')->get(['en_name', 'id']);
+        }
+    }
+
+    public function listByEnglishTitle(){
+        return $this->model->where('status', 1)->orderBy('en_name', 'asc')->get(['en_name', 'id']);
+    }
+
+    public function count(){
+        return $this->model->count();
     }
 
 

@@ -9,6 +9,7 @@ use Illuminate\Auth;
 class DashboardController extends Controller
 {
     public function dashboard(){
+//        dd('start');
         return view('admin.dashboard');
     }
 }
