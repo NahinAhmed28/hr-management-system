@@ -1,14 +1,25 @@
 # HR Management System
 
-HR Management System is a Laravel-based application for human-resource workflows. It is focused on administrative features for employee, HR, or organization management.
+HR Management System is a Laravel-based application for human-resource and employee administration workflows.
 
-## Project Details
+## Features
 
-- Repository: `NahinAhmed28/hr-management-system`
-- Default branch: `master`
-- Visibility: public
-- Project type: Laravel management system
-- Main focus: HR and employee administration
+- Employee and HR data management
+- Admin screens for staff workflows
+- Database-backed records and statuses
+- Role-based access potential
+
+## Modules
+
+- Employee module: profiles, departments, and employee records
+- HR workflow module: attendance, leave, payroll, or status workflows when implemented
+- Admin module: management screens, settings, and reports
+- Auth module: users, roles, and permissions
+- Data module: models, migrations, and seeders
+
+## System Architecture
+
+The system follows Laravel MVC. Routes/controllers handle HR workflows, models persist employee and operational data, views render admin screens, and services can isolate reporting or notification behavior. Environment variables configure database and deployment settings.
 
 ## Getting Started
 
@@ -22,13 +33,3 @@ npm install
 npm run dev
 php artisan serve
 ```
-
-Configure database credentials in `.env`, then run migrations if included.
-
-```bash
-php artisan migrate
-```
-
-## Notes
-
-Document modules such as employees, departments, attendance, payroll, or roles as they apply to the implementation.
